@@ -38,7 +38,8 @@ console.log("Toplam kargo: ", kargo1 + kargo2) */
 
 
 
-/* let number = [1, 5, 6, 8, 15, 20, 4];
+/* Task 2 
+let number = [1, 5, 6, 8, 15, 20, 4];
 console.log("Reqemlerin kvadrati: ");
 for(i = 0; i < number.length; i++){
         console.log(Math.pow(number[i], 2));
@@ -60,7 +61,8 @@ console.log("3-e qaliqsiz bolunen ededlerin cemi: ", sum) */
 
 
 
-/* let fruits = ['alma', 'armud', 'banan', 'çiyələk'];
+/* Task 3
+ let fruits = ['alma', 'armud', 'banan', 'çiyələk'];
 for(i = 0; i < fruits.length; i++){
         console.log(fruits[i].toUpperCase());
 }
@@ -83,7 +85,7 @@ console.log(count2) */
 
 
 
-
+/* Task 4
 let students = [
 	{
 		name: "Orxan",
@@ -109,4 +111,4 @@ for(i = 0; i < students.length; i++){
         if(average / students.scores.length > 60 && average / students[scores].length < 70) console.log('normal')
         else if(average / students.scores.length > 70 && average / students[scores].length < 80) console.log('yaxsi')
         else if(average / students.scores.length > 80 && average / students[scores].length < 90) console.log('ela')
-}
+} */
