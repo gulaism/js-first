@@ -1,91 +1,74 @@
-/* Task 1. 
- let orders = 
-    {
-            id: 'comp',
-            date: '01.03.2024',
-            payment_type: 'digital',
-            cargo_address: 'Azerbaijan, Baku',
-            products: [
-                 {
-                        id: 'mac_15',
-                        title: 'Macbook Air 15',
-                        url: 'https://kontakt.az/az/notbuk-apple-macbook-air-15-mqkx3rua-midnight',
-                        price: '3599.99 AZN'
-                 },
-                 {
-                        id: 'acer_nitro',
-                        title: 'Acer Nitro 5',
-                        url: 'https://kontakt.az/az/notbuk-acer-nitro-5-an515-nh-qfmer-00g',
-                        price: '3299.99 AZN'
-                 }
-            ],
-            customer_id: '123456789',
-            seller: {
-                    id: '987654321',
-                    name: 'Kontakt Home'
-            }
-    }
-console.log(orders);
-
-let price1 = parseFloat(orders.products[0].price)
-let price2 = parseFloat(orders.products[1].price)
-let kargo1 = price1 * 0.15
-let kargo2 = price2 * 0.15 
-console.log("Toplam kargo: ", kargo1 + kargo2) */
-
-
-
+// Task 1
+let orders = [
+        {
+                        id: 'comp21',
+                        date: '3.3.24',
+                        payment_type: 'cash',
+                        cargo_address: 'Azerbaijan',
+                        products: [
+                                 {
+                                                id: '12345',
+                                                title: 'Mac',
+                                                url: 'https://kontakt.az/mac15',
+                                                price: '3300'
+                                 },
+                                 {
+                                                id: '54321',
+                                                title: 'Asus',
+                                                url: 'https://kontakt.az/asustuf',
+                                                price: '3100'
+                                 }
+                        ],
+                        customer_id: '1249',
+                        seller: {
+                                        id: '9421',
+                                        name: 'Kontakt Home'
+                        }
+        }
+]
+for(let order of orders){
+        let kargo = 0
+        for(let product of order.products){
+                kargo += product.price * 0.15 
+        }
+        console.log('Toplam kargo: ', kargo)
+}
 
 
 
-/* Task 2 
+// Task 2
+console.log('Her bir ededin kvadrati: ')
 let number = [1, 5, 6, 8, 15, 20, 4];
-console.log("Reqemlerin kvadrati: ");
 for(i = 0; i < number.length; i++){
-        console.log(Math.pow(number[i], 2));
+        console.log(Math.pow(number[i], 2))
 }
-
-console.log("Cut ededler: ")
+console.log('Cut ededler: ')
 for(i = 0; i < number.length; i++){
-        if(number[i] % 2 == 0) console.log(number[i]);
+        if(number[i]%2==0) console.log(number[i])
 }
-
-sum = 0
-for(i = 0; i < number.length; i++){
-        if(number[i] % 3 == 0) sum += number[i];
+console.log('3-e bolunenlerin cemi: ')
+sum=0
+for(i = 0; i < number.length; i++) {
+        if(number[i]%3==0) sum+=number[i];
 }
-console.log("3-e qaliqsiz bolunen ededlerin cemi: ", sum) */
+console.log(sum)
 
 
 
-
-
-
-/* Task 3
- let fruits = ['alma', 'armud', 'banan', 'çiyələk'];
-for(i = 0; i < fruits.length; i++){
-        console.log(fruits[i].toUpperCase());
+// Task 3
+let fruits = ['alma', 'armud', 'banan', 'çiyələk'];
+for(let fruit of fruits){
+        console.log(fruit.toUpperCase())
 }
-
-
-let count2 = 0;
-for(i = 0; i < fruits.length; i++){
-        let count = 0;
-        for(j = 0; j < fruits[i].length; j++){
-                if(fruits[i][j] === 'a'){
-                        count++
-                        break;
-                } 
-        } 
-        if(count) count2++;
+count=0
+for(let fruit of fruits){
+        if(fruit.includes('a')) count++;
 }
-console.log(count2) */
+console.log(count)
 
 
 
-
-
-/* Task 4
+// Task 4
 let students = [
 	{
 		name: "Orxan",
@@ -99,16 +82,17 @@ let students = [
 	},
 	{
 		name: "Fərid",
-		surname: "İsmayılov",
+		surname: "İsmayilov",
 		scores: [78, 81, 94]
 	}
 ]
-for(i = 0; i < students.length; i++){
-        let overall_score = 0;
-        for(j = 0; j < students.scores.length; j++){
-                average = overall_score + students[i][j];
+for(let student of students){
+        let sum=0
+        for(let score of student.scores){
+             sum += score  
         }
-        if(average / students.scores.length > 60 && average / students[scores].length < 70) console.log('normal')
-        else if(average / students.scores.length > 70 && average / students[scores].length < 80) console.log('yaxsi')
-        else if(average / students.scores.length > 80 && average / students[scores].length < 90) console.log('ela')
-} */
+        if(sum / student.scores.length >= 60 && sum / student.scores.length < 70) console.log(`${student.name} ${student.surname}: normal`)
+        else if(sum / student.scores.length >= 70 && sum / student.scores.length < 80) console.log(`${student.name} ${student.surname}: yaxsi`)
+        else if(sum / student.scores.length >= 80 && sum / student.scores.length < 90) console.log(`${student.name} ${student.surname}: ela`)
+        else console.log(`${student.name} ${student.surname}: qeyri-kafi`)
+}
